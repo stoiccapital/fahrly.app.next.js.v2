@@ -113,11 +113,11 @@ export function HRDashboard() {
 
           {/* Today Status Strip */}
           <section aria-label="Today status">
-            <Card className="flex flex-wrap items-center gap-3 bg-slate-900 text-slate-50">
-              <div className="rounded-full border border-slate-700 px-3 py-1 text-xs font-medium">
+            <Card className="flex flex-wrap items-center gap-3 bg-white text-slate-900">
+              <div className="rounded-full border border-slate-300 px-3 py-1 text-xs font-medium text-slate-900">
                 Today
               </div>
-              <div className="flex flex-wrap items-center gap-3 text-xs">
+              <div className="flex flex-wrap items-center gap-3 text-xs text-slate-900">
                 <span className="flex items-center gap-1">
                   <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
                   <span>{data.statusSummary.absentToday} absent</span>
