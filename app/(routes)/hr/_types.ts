@@ -95,7 +95,7 @@ export type DriverDocumentType =
 
 export type DriverDocumentState = "valid" | "expiring" | "missing";
 
-export type DriverDocument = {
+export type DriverDocumentSnapshot = {
   id: string;
   label: string;
   type: DriverDocumentType;
@@ -147,7 +147,7 @@ export type DriverDetail = {
   payDetailsLinkHref: string;
   vehicleLabel?: string;
   vehicleSecondaryLabel?: string;
-  documents: DriverDocument[];
+  documents: DriverDocumentSnapshot[];
   contracts: {
     active?: DriverContractSnapshot;
     history: DriverContractSnapshot[];
