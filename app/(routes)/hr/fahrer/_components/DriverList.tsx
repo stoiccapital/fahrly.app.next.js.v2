@@ -2,7 +2,7 @@ import Link from "next/link";
 import { PageHeader, PageState } from "@/app/components/shared/layout";
 import { Button, Card } from "@/app/components/shared/ui";
 import { getMockDriverList } from "@/lib/mocks/hrDriverMocks";
-import type { DriverDocumentStatus, DriverListItem, DriverStatus } from "../_types";
+import type { DriverDocumentStatus, DriverListItem, DriverStatus } from "../../_types";
 
 type DriverListProps = {
   searchQuery?: string;
@@ -111,7 +111,9 @@ export function DriverList({
           emptyTitle="Noch keine Fahrer angelegt"
           emptyDescription="Legen Sie Ihren ersten Fahrer an, um mit der Planung zu starten."
           emptyAction={<Button>Fahrer hinzufügen</Button>}
-        />
+        >
+          {null}
+        </PageState>
       </>
     );
   }
@@ -133,7 +135,9 @@ export function DriverList({
               <Button variant="secondary">Filter zurücksetzen</Button>
             </Link>
           }
-        />
+        >
+          {null}
+        </PageState>
       </>
     );
   }

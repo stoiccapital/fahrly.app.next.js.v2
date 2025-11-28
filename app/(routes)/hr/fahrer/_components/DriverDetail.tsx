@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PageHeader, PageState } from "@/app/components/shared/layout";
 import { Button, Card } from "@/app/components/shared/ui";
-import type { DriverDetail, DriverDocumentState } from "../_types";
+import type { DriverDetail, DriverDocumentState } from "../../_types";
 
 type DriverDetailProps = {
   driver: DriverDetail;

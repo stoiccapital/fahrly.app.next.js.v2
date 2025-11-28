@@ -156,3 +156,88 @@ export type DriverDetail = {
   absences: DriverAbsenceSnapshot;
   notes: DriverNote[];
 };
+
+// Onboarding (pipeline) types
+
+export type OnboardingStage =
+  | "lead"
+  | "docs_pending"
+  | "contract_pending"
+  | "training"
+  | "start_scheduled"
+  | "completed"
+  | "cancelled";
+
+export type OnboardingChecklistStatus = "open" | "in_progress" | "done";
+
+export type OnboardingChecklistItem = {
+  id: string;
+  label: string;
+  status: OnboardingChecklistStatus;
+  required: boolean;
+};
+
+export type OnboardingCase = {
+  id: string;
+  driverName: string;
+  phone: string;
+  email?: string;
+  location?: string;
+  stage: OnboardingStage;
+  targetStartDateLabel?: string;
+  responsible?: string;
+  linkedDriverId?: string;
+};
+
+// Detail view types
+
+export type OnboardingDocumentSummary = {
+  id: string;
+  label: string;
+  state: DriverDocumentState;
+  detailLabel?: string;
+};
+
+export type OnboardingNote = {
+  id: string;
+  dateLabel: string;
+  content: string;
+};
+
+export type OnboardingDetail = {
+  id: string;
+  driverName: string;
+  stage: OnboardingStage;
+  stageLabel: string;
+  isReady: boolean;
+  readinessLabel: string;
+  targetStartDateLabel?: string;
+
+  // Person & meta
+  phone: string;
+  email?: string;
+  preferredLanguage?: string;
+  location?: string;
+  employmentType: DriverEmploymentType;
+  shiftTags: string[];
+  basePayLabel: string;
+  desiredStartDateLabel?: string;
+  actualStartDateLabel?: string;
+  noteSummary?: string;
+
+  // Checklist
+  checklist: OnboardingChecklistItem[];
+  checklistCompletedCount: number;
+  checklistTotalCount: number;
+
+  // Documents snapshot
+  documents: OnboardingDocumentSummary[];
+  criticalMissingCount: number;
+
+  // Communication / notes
+  notes: OnboardingNote[];
+
+  // Link to Fahrer
+  linkedDriverId?: string;
+  linkedDriverName?: string;
+};

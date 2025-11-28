@@ -33,7 +33,9 @@ export default function FahrerDetailPage({ params }: FahrerDetailPageProps) {
               <Button variant="secondary">Zur Fahrerübersicht</Button>
             </a>
           }
-        />
+        >
+          {null}
+        </PageState>
       </>
     );
   }

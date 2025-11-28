@@ -2,6 +2,7 @@ import type {
   DriverListItem,
   DriverDetail,
   DriverDocumentState,
+  DriverDocumentType,
 } from "@/app/(routes)/hr/_types";
 
 export const mockDriverList: DriverListItem[] = [
@@ -70,7 +71,7 @@ export const mockDriverList: DriverListItem[] = [
 const makeDocument = (
   id: string,
   label: string,
-  type: DriverDocument["type"],
+  type: DriverDocumentType,
   state: DriverDocumentState,
   expiryLabel?: string,
 ) => {
